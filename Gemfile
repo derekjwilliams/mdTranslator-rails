@@ -1,9 +1,10 @@
 source 'https://rubygems.org'
-ruby '2.1.10'
+ruby '2.3.1', :engine => 'jruby', :engine_version => '9.1.6.0'
 
 #use unicorn server
 platforms :ruby do # linux
-    gem 'unicorn'
+    # gem 'unicorn'
+    gem 'puma'
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -11,12 +12,14 @@ gem 'rails', '4.1.1'
 
 # Use sqlite3 as the database for Active Record
 group :development do
-  gem 'sqlite3'
+  # gem 'sqlite3'
+   gem 'activerecord-jdbcsqlite3-adapter'
 end
 
 #for heroku
 group :production do
-  gem 'pg'
+#  gem 'pg'
+   gem 'activerecord-jdbcpostgresql-adapter'
 end
 
 # Use SCSS for stylesheets
@@ -51,7 +54,8 @@ gem 'json-schema', '>= 2.4', '< 2.5'
 # Alaska Data Integration working group schema definition
 gem 'adiwg-mdjson_schemas', '~> 1.0'
 # Alaska Data Integration working group metadata translator
-gem 'adiwg-mdtranslator', '~> 1.4.0.beta10'
+#gem 'adiwg-mdtranslator', '~> 1.4.0.beta13'
+gem "adiwg-mdtranslator", '1.4.0.beta14'
 # Alaska Data Integration working group metadata code lists
 gem 'adiwg-mdcodes', '~> 1.0'
 
