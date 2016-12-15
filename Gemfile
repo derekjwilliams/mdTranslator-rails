@@ -10,18 +10,6 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
 
-# Use sqlite3 as the database for Active Record
-group :development do
-  # gem 'sqlite3'
-   gem 'activerecord-jdbcsqlite3-adapter'
-end
-
-#for heroku
-group :production do
-#  gem 'pg'
-   gem 'activerecord-jdbcpostgresql-adapter'
-end
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -54,17 +42,13 @@ gem 'json-schema', '>= 2.4', '< 2.5'
 # Alaska Data Integration working group schema definition
 gem 'adiwg-mdjson_schemas', '~> 1.0'
 # Alaska Data Integration working group metadata translator
-#gem 'adiwg-mdtranslator', '~> 1.4.0.beta13'
-gem "adiwg-mdtranslator", '1.4.0.beta14'
+gem 'adiwg-mdtranslator', '~> 1.4.0.beta10'
 # Alaska Data Integration working group metadata code lists
 gem 'adiwg-mdcodes', '~> 1.0'
 
 # Use kramdown to render markdown with help of coderay
 gem 'kramdown'
 gem 'coderay'
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
